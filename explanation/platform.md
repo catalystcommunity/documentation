@@ -14,7 +14,7 @@ This is the basis of the Catalyst Squad platform philosophy. Care about the groc
 
 This is cloud native thinking, and if you are building a grocery store, or a dairy farm, or a food shipping service, this is important. Let's talk about a few concepts that are important thinking in a Catalyst Squad Platform
 
-# Metrics > Logs > Shelling
+## Metrics > Logs > Shelling
 
 Record everything, but you want metrics first, logs second, and shell access never. Shell access implies a lot of things that are not good, but most importantly any time you need shell access outside your local dev environment, you should consider it a break glass event and do a post mortem.
 
@@ -28,7 +28,7 @@ Metrics also put themselves in a very important scope of change over time. Often
 
 So prefer metrics.
 
-# We are Not Special
+## We are Not Special
 
 When we discuss a practice or tool or technique with our colleagues in the industry, two common arguments emerge, though of course never together.
 
@@ -47,7 +47,7 @@ Often the rebuttal to this is that "well, we need X feature." This is where the 
 
 In a Catalyst Squad Platform, we try to use well worn paths to give a good foundation to build software. We avoid special cases and instead lean on well researched and tested tools and techniques to achieve organization outcomes. There are other tools and techniques that could work as well, but our choices have been made to work well together and keep special one-offs to a minimum.
 
-# Separation of Concerns
+## Separation of Concerns
 
 In your kitchen, you have a set of tools. Almost everyone has a couple of tools that have only one purpose. Imagine a garlic press. It is only useful for garlic. If you need to press garlic often, this might be awesome, but the garlic press design is good for a specific thing and not others.
 
@@ -63,7 +63,7 @@ What this gives us is extremely flexible and replacable lego bricks to build wit
 
 Care about less, do it in more places, compose structures we need out of those. It will feel like we have to learn more things, but really it's just a lot of smaller things that are more consumable to our minds as opposed to a huge thing that is less of a bullet list but much more of a meal to chew on.
 
-# Some technical notes
+## Some technical notes
 
 We prefer to work in Go and Rust. They're efficient to run, and enforce good engineering habits for a long term investment. In a view of a decade, these are not a huge learning curve.
 
@@ -77,6 +77,6 @@ We prefer tools that have opinions about workflow that have been proven to work.
 
 We prefer to avoid "Classes" as in OOP classes. What Java and C# we write you will note is very straight forward and not very OOP. You do not have to agree, but if you with to PR to our libraries or services, you will need to know our style to fit it.
 
-# A note on versions
+## A note on versions
 
 Some of our workflows are sophisticated about versioning. Some of our products are also sophisticated about versioning. Some are not. This documentation repo for instance has no versioning at the time of this writing. It will improve over time. We are not purists about much, and will use versions where it adds value to an org, but not just because it's a Good Thing™ as an axiom.

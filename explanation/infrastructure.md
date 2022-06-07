@@ -1,6 +1,6 @@
 # The Catalyst Squad Infrastructure Philosophy
 
-Catalyst Squad has a few overaching theories about how to break up an infrastructure for internal engineers to utilize, and the associated implications for reliability, security, and self-service of devs.
+Catalyst Squad has a few overarching theories about how to break up an infrastructure for internal engineers to utilize, and the associated implications for reliability, security, and self-service of devs.
 
 At a very high level, Software Engineers are responsible for everything having to do with their services. This is normal for modern Software Engineering teams, and often those teams rely on services from other teams in addition. This is fine and good, and the first thing internal teams must provide is some sort of infrastructure.
 
@@ -11,14 +11,17 @@ Specifically, there will be some sort of Cloud Infrastructure, even if it's in a
     State "Cloud Infra" as CloudInfra {
         direction LR
         Internet --> nonprod
+        nonprod --> common
         Internet --> common
         Internet --> prod
+        prod --> common
+
+        state common {
+            shared
+        }
 
         state nonprod {
             dev
-        }
-        state common {
-            shared
         }
         state prod {
             production
@@ -28,7 +31,7 @@ Specifically, there will be some sort of Cloud Infrastructure, even if it's in a
 
 ## The three highest level environments
 
-When considering high level environments, it's about blast radius and customer data access. A key to thinking in Cloud Native is not to name things. Conceptually, any time you run something, there is only the version of the thing and the data it runs against. Those are the lego bricks we have. You could potentailly run 3 different versions of a thing against the same data.
+When considering high level environments, it's about blast radius and customer data access. A key to thinking in Cloud Native is not to name things. Conceptually, any time you run something, there is only the version of the thing and the data it runs against. Those are the lego bricks we have. You could potentially run 3 different versions of a thing against the same data.
 
 If you name something "dev" and "staging" these may have meaning to you, but they are incorrect to others. Instead, we want to think about the purpose of a run and keep things ephemeral as much as possible.
 
