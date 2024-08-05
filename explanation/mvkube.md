@@ -22,7 +22,7 @@ All logs and metrics are sent to common. Common will also have services that non
 
 The infrastructure layer is created through Infrastucture as Code. Currently we're using Terraform to do this.
 
-Terraform is also used to install ArgoCD. After that, everything else is installed with an [ArgoCD App of Apps](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/) we maintain a [helm chart](https://github.com/catalystsquad/chart-platform-services/) for.
+Terraform is also used to install ArgoCD. After that, everything else is installed with an [ArgoCD App of Apps](https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/) we maintain a [helm chart](https://github.com/catalystcommunity/chart-platform-services/) for.
 
 Once deployed, the helm chart installs all the ArgoCD Applications for each of the core platform services, hence the name.
 
